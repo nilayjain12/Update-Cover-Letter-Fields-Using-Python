@@ -29,7 +29,7 @@ def modify_cover_letter(position_name, company_name):
     # original_doc = Document(input_file_path)
 
     # Create a new document for modification
-    modified_doc = Document(r'C:\Users\njain\OneDrive - Cal State Fullerton\SPRING 2024\Nilay Jain Resume\Cover Letter\Modified_Cover_Letter.docx')
+    modified_doc = Document('Modified_Cover_Letter.docx')
 
     # Clone content from original document to modified document
     for paragraph in modified_doc.paragraphs:
@@ -50,12 +50,11 @@ def modify_cover_letter(position_name, company_name):
         paragraph.space_after = Pt(0.5)  # Adjust the spacing between paragraphs as needed
 
     # Save the modified document with a different name
-    modified_doc_path = r"C:\Users\njain\OneDrive - Cal State Fullerton\SPRING 2024\Nilay Jain Resume\Cover Letter\Modified_Cover_Letter.docx"
-    modified_doc.save(modified_doc_path)
+    modified_doc.save('Modified_Cover_Letter.docx')
 
     # Convert the modified document to PDF
-    output_pdf_path = r"C:\Users\njain\OneDrive - Cal State Fullerton\SPRING 2024\Nilay Jain Resume\Cover Letter\CoverLetter.pdf"
-    convert(modified_doc_path, output_pdf_path)
+    output_pdf_path = "CoverLetter.pdf"
+    convert('Modified_Cover_Letter.docx', output_pdf_path)
 
 if __name__ == "__main__":
     # Check if there are enough command-line arguments
